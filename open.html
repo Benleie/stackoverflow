@@ -1,0 +1,55 @@
+<!-- 
+    * https://segmentfault.com/q/1010000023561916
+    * 编码  window.open()
+    * 已拦截弹出式窗口
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>open</title>
+</head>
+
+<body>
+
+    <script>
+        var href = "https://s.1688.com/selloffer/offer_search.htm?keywords=小白&sortType=va_rmdarkgmv30rt"
+        var href2 = encodeURI(href)  //编码了一次
+        window.open(href2)
+    </script>
+
+
+<!-- 
+    * https://segmentfault.com/q/1010000023567146
+    * window OBJECT
+ -->
+    <script>
+        var msg = {
+            a: 1,
+            b: 2
+        };
+        console.log(this === window)
+        // window.msg = msg;
+        var chat  = {
+            send: function(){
+                console.log(msg === window.msg)  //true
+                console.log(this === window)    //false
+                msg[1] = 3; //这里操作的msg是window上的msg吗
+            }
+        }
+        chat.send()
+    </script>
+
+    <!-- 
+        * https://segmentfault.com/q/1010000023567227
+        * Window.open()  style
+     -->
+    <script>
+        
+    </script>
+</body>
+
+</html>
